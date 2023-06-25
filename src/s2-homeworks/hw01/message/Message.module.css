@@ -3,14 +3,30 @@
 }
 
 .imageAndText {
+    display: flex;
+    height: 70px;
+    flex-direction: row-reverse;
+    align-items: flex-end;
 
 }
 
 .imageAndText img {
-
+    height: 70px;
 }
 
 .text {
+    background-color: #0066cc;
+    padding: 10px;
+    text-align: right;
+    margin-right: 20px;
+    max-width: 40%;
+    -webkit-border-radius: 10px;
+    -webkit-border-bottom-right-radius: 0;
+    -moz-border-radius: 10px;
+    -moz-border-radius-bottomright: 0;
+    border-radius: 10px;
+    border-bottom-right-radius: 0;
+    position: relative;
 
 }
 
@@ -19,13 +35,22 @@
 }
 
 .name {
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 24px;
 
 }
 
 .messageText {
+    color: #fff;
+    font-size: 20px;
 
 }
 
 .time {
-
+    text-align: right;
+    padding-top: 10px;
+    padding-right: 15px;
+    margin-bottom: 30px;
 }
