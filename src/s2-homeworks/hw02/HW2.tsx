@@ -41,12 +41,10 @@ export const filterAffairs = (affairs: Array<AffairType>, filter: FilterType): A
     } else {
         return affairs.filter((el) => el.priority === filter)
     }
-
     // return affairs // need to fix
 }
 export const deleteAffair = (affairs: Array<AffairType>, _id: number): any => { // need to fix any
-    return affairs.filter(el => el._id === _id)
-
+    return affairs.filter(el => el._id !== _id)
     // return affairs // need to fix
 }
 
@@ -56,7 +54,7 @@ function HW2() {
 
     const filteredAffairs = filterAffairs(affairs, filter)
     const deleteAffairCallback = (_id: number) => { // need to fix any
-
+        setAffairs(deleteAffair(affairs, _id))
     }
 
     return (
