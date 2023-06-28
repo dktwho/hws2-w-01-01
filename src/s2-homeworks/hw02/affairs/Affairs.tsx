@@ -11,37 +11,37 @@ type AffairsPropsType = {
     filter: FilterType
 }
 
-function Affairs(props: AffairsPropsType) {
+function Affairs({data, setFilter, deleteAffairCallback, filter}: AffairsPropsType) {
     const setAll = () => {
-        props.setFilter('all')
+        setFilter('all')
         // need to fix
     }
     const setHigh = () => {
-        props.setFilter('high')
+        setFilter('high')
 
         // need to fix
     }
     const setMiddle = () => {
-        props.setFilter('middle')
+        setFilter('middle')
 
         // need to fix
     }
     const setLow = () => {
-        props.setFilter('low')
+        setFilter('low')
 
         // need to fix
     }
 
-    const cnAll = s.button + ' ' + s.all + (props.filter === 'all' ? ' ' + s.active : '')
-    const cnHigh = s.button + ' ' + s.high + (props.filter === 'high' ? ' ' + s.active : '')
-    const cnMiddle = s.button + ' ' + s.middle + (props.filter === 'middle' ? ' ' + s.active : '')
-    const cnLow = s.button + ' ' + s.low + (props.filter === 'low' ? ' ' + s.active : '')
+    const cnAll = s.button + ' ' + s.all + (filter === 'all' ? ' ' + s.active : '')
+    const cnHigh = s.button + ' ' + s.high + (filter === 'high' ? ' ' + s.active : '')
+    const cnMiddle = s.button + ' ' + s.middle + (filter === 'middle' ? ' ' + s.active : '')
+    const cnLow = s.button + ' ' + s.low + (filter === 'low' ? ' ' + s.active : '')
 
-    const mappedAffairs = props.data.map((a: AffairType) => (
+    const mappedAffairs = data.map((a: AffairType) => (
         <Affair
             key={a._id} // кеи ОБЯЗАТЕЛЬНЫ в 99% - так что лучше их писать всегда при создании компонент в мапе
             affair={a}
-            deleteAffairCallback={props.deleteAffairCallback}
+            deleteAffairCallback={deleteAffairCallback}
         />
     ))
 
