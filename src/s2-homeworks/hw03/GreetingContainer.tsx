@@ -48,7 +48,6 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
             error && setError('')
         }
         setName(e.currentTarget.value) // need to fix
-
     }
 
 
