@@ -1,5 +1,6 @@
 .App {
     --header_height: 60px;
+
 }
 
 .hw {
@@ -7,5 +8,10 @@
 }
 
 .hwTitle {
-
+    color: #000;
+    font-size: 22px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 }
