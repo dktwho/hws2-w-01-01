@@ -5,21 +5,15 @@
 
 .inputAndButtonContainer {
     background-color: #fff;
-
-
 }
 
 .error {
-
-
     color: #C00;
     font-size: 14px;
-    font-family: Montserrat;
+    /*font-family: Montserrat;*/
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-
-
 }
 
 .input {
@@ -29,13 +23,9 @@
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
-    color: #d1d1d1;
+    color: #000;
     border-radius: 5px;
     border: 0.2px solid #d1d1d1;
-
-
-
-
 }
 
 .input:focus {
@@ -71,7 +61,6 @@
     border-radius: 3px;
     opacity: 0.5;
     background: #06C;
-
 }
 
 .button:focus {
@@ -85,15 +74,15 @@
 
 .text {
     color: rgba(0, 0, 0, 0.50);
-    font-size: 14px;
+    font-size: 16px;
     /*font-family: Montserrat;*/
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     line-height: normal;
 }
 
 .greeting {
-    olor: #000;
+    color: #000;
     font-size: 14px;
     /*font-family: Montserrat;*/
     font-style: normal;
