@@ -10,7 +10,6 @@
 .error {
     color: #C00;
     font-size: 14px;
-    /*font-family: Montserrat;*/
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -24,26 +23,33 @@
     align-items: center;
     flex-shrink: 0;
     color: #000;
-    border-radius: 5px;
+    border-radius: 3px;
     border: 0.2px solid #d1d1d1;
 }
 
 .input:focus {
     background-color: #fff;
-    border: 1px solid gray;
+    border: 0.2px solid gray;
     border-radius: 3px;
 }
 
 .errorInput {
+    display: flex;
+    width: 372px;
+    height: 36px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    color: #000;
+
     background-color: #fff;
-    border: 1px solid red;
+    border: 0.1px solid red;
     border-radius: 3px;
 }
 
 .button {
 
     width: 100px;
-
     color:#FFF;
     font-size: 14px;
     font-style: normal;
@@ -64,9 +70,15 @@
 }
 
 .button:focus {
+    border-radius: 3px;
+    opacity: 0.9;
+    background: deepskyblue;
 }
 
 .button:active {
+    border-radius: 3px;
+    opacity: 0.8;
+    background: dodgerblue;
 }
 
 .button:disabled {
