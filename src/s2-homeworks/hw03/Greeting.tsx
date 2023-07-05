@@ -3,7 +3,7 @@ import s from './Greeting.module.css'
 
 type GreetingPropsType = {
     name: string // need to fix any
-    setNameCallback: (e:ChangeEvent<HTMLInputElement> ) => void // need to fix any
+    setNameCallback: (e: ChangeEvent<HTMLInputElement>) => void // need to fix any
     addUser: () => void // need to fix any
     onBlur: () => void // need to fix any
     onEnter: (e: KeyboardEvent<HTMLInputElement>) => void // need to fix any
@@ -25,7 +25,7 @@ const Greeting: React.FC<GreetingPropsType> = (
         lastUserName,
     } // деструктуризация пропсов
 ) => {
-    const inputClass = s.errorInput ? s.errorInput : s.input // need to fix with (?:)
+    const inputClass = error ? s.errorInput : s.input // need to fix with (?:)
 
 
     return (
