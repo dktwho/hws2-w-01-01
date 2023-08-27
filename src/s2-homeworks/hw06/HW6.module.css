@@ -1,5 +1,38 @@
 .buttonsContainer {
+    display: inline-flex;
+    padding: 5px 70px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+
+    color: #06C;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 142.857% */
+
+
 }
 
+
+
 .editableSpanContainer {
+    display: flex;
+    width: 276px;
+    height: 36px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    color: #D1D1D1;
+
+    /*border-radius: 5px;*/
+    /*border: 2px solid #D1D1D1;*/
+}
+
+
+.editableSpanContainer input {
+    border-radius: 5px;
+    border: 2px solid #D1D1D1;
+
 }

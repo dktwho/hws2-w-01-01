@@ -1,11 +1,44 @@
 .spanBlock {
+    margin-left: 70px;
+    display: flex;
+    width: 276px;
+    height: 36px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    color: #000;
 }
 
 .span {
+    margin-left: 10px;
+    color: #0080FF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
 .input {
+    margin-left: 140px;
+    width: 276px;
+    height: 36px;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 2px solid #D1D1D1;
+
+
+
 }
 
 .pen {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    color: #0080FF
+
 }
