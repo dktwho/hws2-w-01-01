@@ -27,8 +27,6 @@ const HW10 = () => {
             clearTimeout(timeId)
             dispatch(loadingAC(isLoading))
         }, 1500)
-
-
     }
 
 
