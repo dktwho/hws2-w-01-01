@@ -17,9 +17,13 @@ function HW11() {
 
     const change = (event: any, value: any) => {
         // пишет студент // если пришёл массив - сохранить значения в оба useState, иначе в первый
-        console.log(event.target.value,value)
-
-
+        console.log(event.target, value)
+        if(event.target.name === '1') {
+            setValue1(value)
+            setValue2(value)
+        } else {
+            setValue2(value)
+        }
     }
 
     return (
