@@ -50,6 +50,7 @@ const HW14 = () => {
                 if(techs) {
                     setTechs(techs)
                 }
+                setFind('')
 
                 // делает студент
                 // сохранить пришедшие данные
