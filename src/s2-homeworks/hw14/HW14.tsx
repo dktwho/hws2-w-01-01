@@ -28,7 +28,7 @@ const getTechs = (find: string): Promise<AxiosResponse<{ techs: string[] }, any>
     return axios
         .get<{ techs: string[] }>(
             'https://samurai.it-incubator.io/api/3.0/homework/test2',
-            { params: { find } }
+            {params: {find}}
         )
         .catch((e) => {
             alert(e.response?.data?.errorText || e.message);
@@ -47,11 +47,9 @@ const HW14 = () => {
         getTechs(value)
             .then((res) => {
                 const techs = res.data?.techs
-                if(techs) {
+                if (techs) {
                     setTechs(techs)
                 }
-                setFind('')
-
                 // делает студент
                 // сохранить пришедшие данные
 
