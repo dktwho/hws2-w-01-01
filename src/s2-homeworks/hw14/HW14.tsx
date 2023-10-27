@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import s2 from '../../s1-main/App.module.css'
 import s from './HW14.module.css'
-import axios from 'axios'
+import axios, {AxiosResponse} from 'axios'
 import SuperDebouncedInput from './common/c8-SuperDebouncedInput/SuperDebouncedInput'
 import {useSearchParams} from 'react-router-dom'
 
@@ -13,7 +13,7 @@ import {useSearchParams} from 'react-router-dom'
 * 5 - добавить HW14 в HW5/pages/JuniorPlus
 * */
 
-const getTechs = (find: string) => {
+const _getTechs = (find: string) => {
     return axios
         .get<{ techs: string[] }>(
             'https://samurai.it-incubator.io/api/3.0/homework/test2',
@@ -23,6 +23,18 @@ const getTechs = (find: string) => {
             alert(e.response?.data?.errorText || e.message)
         })
 }
+
+const getTechs = (find: string): Promise<AxiosResponse<{ techs: string[] }, any>> => {
+    return axios
+        .get<{ techs: string[] }>(
+            'https://samurai.it-incubator.io/api/3.0/homework/test2',
+            { params: { find } }
+        )
+        .catch((e) => {
+            alert(e.response?.data?.errorText || e.message);
+            throw e;
+        });
+};
 
 const HW14 = () => {
     const [find, setFind] = useState('')
@@ -34,11 +46,18 @@ const HW14 = () => {
         setLoading(true)
         getTechs(value)
             .then((res) => {
-                setTechs(res.data.techs)
+                const techs = res.data?.techs
+                if(techs) {
+                    setTechs(techs)
+                }
+
                 // делает студент
                 // сохранить пришедшие данные
 
                 //
+            })
+            .catch((error) => {
+                console.log(error)
             })
     }
 
