@@ -50,6 +50,8 @@ const HW14 = () => {
                 if (techs) {
                     setTechs(techs)
                 }
+                setLoading(false)
+
                 // делает студент
                 // сохранить пришедшие данные
 
@@ -58,10 +60,12 @@ const HW14 = () => {
             .catch((error) => {
                 console.log(error)
             })
+
     }
 
     const onChangeText = (value: string) => {
         setFind(value)
+
         // делает студент
         // добавить/заменить значение в квери урла
 
@@ -75,6 +79,7 @@ const HW14 = () => {
         const params = Object.fromEntries(searchParams)
         sendQuery(params.find || '')
         setFind(params.find || '')
+
     }, [])
 
     const mappedTechs = techs.map(t => (
