@@ -52,7 +52,7 @@ const HW15 = () => {
         setLoading(true)
         getTechs(params)
             .then((res) => {
-                if (res && res.data) {
+                if (res && res.data && params.count === 7) {
                     setLoading(true)
                     const {techs, totalCount} = res.data
                     setTechs(techs)
