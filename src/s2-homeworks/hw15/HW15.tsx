@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import s2 from '../../s1-main/App.module.css'
 import s from './HW15.module.css'
-import axios from 'axios'
+import axios, {AxiosResponse} from 'axios'
 import SuperPagination from './common/c9-SuperPagination/SuperPagination'
 import {useSearchParams} from 'react-router-dom'
 import SuperSort from './common/c10-SuperSort/SuperSort'
@@ -51,12 +51,23 @@ const HW15 = () => {
         setLoading(true)
         getTechs(params)
             .then((res) => {
+                if (res && res.data) {
+                    setLoading(true)
+                    const {techs, totalCount} = res.data
+                    setTechs(techs)
+                    setTotalCount(totalCount)
+                    setLoading(false)
+                }
                 // делает студент
-
                 // сохранить пришедшие данные
-
                 //
             })
+            .catch((error) => {
+                alert(error.response?.data?.errorText || error.message);
+            })
+            .finally(() => {
+                setLoading(false);
+            });
     }
 
     const onChangePagination = (newPage: number, newCount: number) => {
@@ -64,19 +75,25 @@ const HW15 = () => {
 
         // setPage(
         // setCount(
-
         // sendQuery(
         // setSearchParams(
+
+        setPage(newPage)
+        setCount(newCount)
+        sendQuery({sort, page: newPage, count: newCount});
+        setSearchParams({sort, page: newPage.toString(), count: newCount.toString()});
 
         //
     }
 
     const onChangeSort = (newSort: string) => {
         // делает студент
-
+        setSort(newSort);
+        setPage(1);
         // setSort(
         // setPage(1) // при сортировке сбрасывать на 1 страницу
-
+        sendQuery({sort: newSort, page: 1, count});
+        setSearchParams({sort: newSort, page: '1', count: count.toString()});
         // sendQuery(
         // setSearchParams(
 
