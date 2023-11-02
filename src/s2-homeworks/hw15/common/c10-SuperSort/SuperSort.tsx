@@ -23,8 +23,7 @@ export const pureChange = (sort: string, down: string, up: string) => {
         case up:
             return '';
         default:
-            return down
-    }
+            return down    }
 //     return up // исправить
 }
 
