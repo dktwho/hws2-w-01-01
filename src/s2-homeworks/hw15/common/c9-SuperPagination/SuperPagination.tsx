@@ -20,15 +20,20 @@ const SuperPagination: React.FC<SuperPaginationPropsType> = (
     // const _lastPage = 10 // пишет студент // вычислить количество страниц
     const lastPage = Math.ceil(totalCount / itemsCountForPage)
 
+
+
     const onChangeCallback = (event: any, page: number) => {
         // пишет студент
-        onChange(page, itemsCountForPage)
+        onChange(page, event.currentTarget.value ? +event.currentTarget.value : itemsCountForPage)
+
     }
 
-    const onChangeSelect = (event: ChangeEvent<HTMLSelectElement>) => {
+    const _onChangeSelect = (event: any) => {
         // пишет студент
-        onChange(page, Number(event.target.value))
+
     }
+
+    const onChangeSelect = (event: ChangeEvent<{ value: unknown }>) => { onChange(page, event.target.value as number) }
 
     return (
         <div className={s.pagination}>

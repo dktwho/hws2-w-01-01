@@ -52,7 +52,7 @@ const HW15 = () => {
         setLoading(true)
         getTechs(params)
             .then((res) => {
-                if (res && res.data && params.count === 7) {
+                if (res && res.data) {
                     setLoading(true)
                     const {techs, totalCount} = res.data
                     setTechs(techs)
@@ -79,8 +79,8 @@ const HW15 = () => {
         // setSearchParams(
         setCount(newCount)
         setPage(newPage)
-        sendQuery({sort, page: newPage, count: newCount});
-        setSearchParams({sort, page: newPage.toString(), count: newCount.toString()});
+        sendQuery({ page: newPage.toString(), count: newCount.toString()});
+        setSearchParams({ page: newPage.toString(), count: newCount.toString()});
     }
 
 
@@ -90,8 +90,8 @@ const HW15 = () => {
         setPage(1);
         // setSort(
         // setPage(1) // при сортировке сбрасывать на 1 страницу
-        sendQuery({sort: newSort, page: 1, count});
-        setSearchParams({sort: newSort, page: '1', count: count.toString()});
+        sendQuery({sort: newSort, page: 1});
+        setSearchParams({sort: newSort, page: '1'});
         // sendQuery(
         // setSearchParams(
         //
@@ -128,6 +128,7 @@ const HW15 = () => {
                     itemsCountForPage={count}
                     totalCount={totalCount}
                     onChange={onChangePagination}
+
                 />
 
                 <div className={s.rowHeader}>
