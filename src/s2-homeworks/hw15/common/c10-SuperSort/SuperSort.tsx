@@ -15,15 +15,21 @@ export type SuperSortPropsType = {
 export const pureChange = (sort: string, down: string, up: string) => {
     // пишет студент, sort: (click) => down (click) => up (click) => '' (click) => down ...
 
-    switch (sort) {
-        case '':
-            return down;
-        case down:
-            return up;
-        case up:
-            return '';
-        default:
-            return down    }
+    // switch (sort) {
+    //     case '':
+    //         return down;
+    //     case down:
+    //         return up;
+    //     case up:
+    //         return '';
+    //     default:
+    //         return down    }
+
+    return sort === down
+    ? up
+        : sort === up
+    ?  '' : down
+
 //     return up // исправить
 }
 
